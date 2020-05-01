@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "name": "foo",
+    "url": "/final_data.json"
+  },
+  "title": "Linked List Latest Test Results",
+  "config": {
+    "axis": { "grid": true, "labelFontSize": 12, "titleFontSize": 14 },
+    "title": { "offset": 30 }
+  },
+  "mark": "circle",
+  "width": 800,
+  "encoding": {
+    "y": {
+      "field": "testName",
+      "type": "nominal",
+      "sort": { "field": "name", "op": "count", "order": "ascending" },
+      "axis": {
+        "labelLimit": 240,
+        "title": "Test"
+      }
+    },
+    "x": {
+      "field": "name",
+      "type": "nominal",
+      "axis": { "labelAngle": -60, "title": "Name" },
+      "sort": "ascending"
+    },
+    "size": { "value": 200 },
+    "color": {
+      "field": "failed",
+      "type": "nominal",
+      "scale": { "scheme": "redyellowgreen", "range": ["#22964f", "#d4322c"] }
+    }
+  }
+}

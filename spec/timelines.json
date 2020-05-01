@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "name": "foo",
+    "url": "/final_data.json"
+  },
+  "title": "Linked List Test Timelines",
+  "config": {
+    "axis": {
+      "grid": true,
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  },
+  "mark": "circle",
+  "height": 600,
+  "width": 800,
+  "encoding": {
+    "y": {
+      "field": "name",
+      "type": "ordinal",
+      "sort": { "field": "timestamp", "op": "max", "order": "descending" },
+      "axis": { "title": "Name" }
+    },
+    "x": {
+      "field": "timestamp",
+      "type": "temporal",
+      "axis": { "title": "Pushed At", "titlePadding": 30 }
+    },
+    "color": {
+      "field": "stats['percent']",
+      "type": "quantitative",
+      "scale": { "scheme": "redyellowgreen" },
+      "legend": { "title": "Pass %", "padding": 30 }
+    },
+    "size": {
+      "field": "stats['total']",
+      "type": "quantitative",
+      "legend": null,
+      "scale": { "range": [50, 200] }
+    }
+  }
+}
