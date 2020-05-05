@@ -40,6 +40,14 @@ toSVG(
     );
   })
   .then(newTemplate => {
+    return toSVG(
+      'passPercent',
+      transform.getPassPercent(data),
+      newTemplate,
+      '__PASS_PERCENT__'
+    );
+  })
+  .then(newTemplate => {
     if (!fs.existsSync('./public')) fs.mkdirSync('./public');
     fs.writeFileSync('./public/index.html', newTemplate, 'utf8');
   });

@@ -45,8 +45,19 @@ const getLatestPushSummary = data => {
   });
   return getTestSummaryPerPush(subset);
 };
+
+const getPassPercent = data => {
+  const testSummaryPerPush = getLatestPushSummary(data);
+  const groups = ld.groupBy(testSummaryPerPush, 'name');
+  const passPercentages = ld.map(groups, (testResults, _) => testResults[0]);
+  return passPercentages.map(({ name, _id, timestamp, stats }) => {
+    return { name, _id, timestamp, percent: stats.percent };
+  });
+};
+
 module.exports = {
   getMetaSummaryPerPush,
   getTestSummaryPerPush,
-  getLatestPushSummary
+  getLatestPushSummary,
+  getPassPercent
 };
