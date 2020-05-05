@@ -11,15 +11,16 @@
     "title": { "offset": 30 }
   },
   "mark": "circle",
-  "width": 800,
+  "width": 1000,
+  "height": 600,
   "encoding": {
     "y": {
       "field": "testName",
       "type": "nominal",
       "sort": { "field": "name", "op": "count", "order": "ascending" },
       "axis": {
-        "labelLimit": 240,
-        "title": "Test"
+        "labelLimit": 440,
+        "title": null
       }
     },
     "x": {
@@ -32,7 +33,7 @@
     "color": {
       "field": "failed",
       "type": "nominal",
-      "scale": { "scheme": "redyellowgreen", "range": ["#22964f", "#d4322c"] }
+      "scale": { "range": ["#b0deb5", "#f96459"] }
     }
   }
 }
