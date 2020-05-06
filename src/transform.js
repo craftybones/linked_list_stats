@@ -36,7 +36,7 @@ const getTestSummaryPerPush = data => ld.flatMap(data, testDetailsPerPush);
 const getLatestPushSummary = data => {
   const groups = ld.groupBy(
     data,
-    x => x.commit.author.name || x.commit.author.username
+    x => x.commit.author.username || x.commit.author.name
   );
   const subset = ld.flatMap(groups, (details, _) => {
     let timeStampGroups = ld.groupBy(details, 'timestamp');
