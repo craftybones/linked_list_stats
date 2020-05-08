@@ -12,7 +12,7 @@ const getTests = (tests, report) => (tests = report ? report.tests : tests);
 const metaDataPerPush = ({ _id, report, commit, timestamp, tests, stats }) => {
   tests = getTests(tests, report);
   const { author } = commit;
-  const name = author.name || author.username;
+  const name = author.username || author.name;
   stats = stats ? stats : calcStats(tests);
   stats.percent = (stats.passed / stats.total) * 100;
   return { _id, timestamp, name, stats };

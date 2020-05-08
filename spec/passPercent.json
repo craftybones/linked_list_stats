@@ -5,7 +5,7 @@
     "name": "foo",
     "url": "/final_data.json"
   },
-  "title": "Linked List Pass Percentages",
+  "title": "Map Filter Reduce Pass Percentages",
   "config": {
     "axis": {
       "labelFontSize": 12
