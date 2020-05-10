@@ -47,6 +47,9 @@ toSVG(
       '__PASS_PERCENT__'
     );
   })
+  .then(newTemplate =>
+    newTemplate.replace('__LAST_GENERATED_AT__', new Date().toISOString())
+  )
   .then(newTemplate => {
     if (!fs.existsSync('./public')) fs.mkdirSync('./public');
     fs.writeFileSync('./public/index.html', newTemplate, 'utf8');
