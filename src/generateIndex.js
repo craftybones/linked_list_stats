@@ -48,7 +48,7 @@ toSVG(
     );
   })
   .then(newTemplate =>
-    newTemplate.replace('__LAST_GENERATED_AT__', new Date().toISOString())
+    newTemplate.replace('__LAST_GENERATED_AT__', new Date().toLocaleString())
   )
   .then(newTemplate => {
     if (!fs.existsSync('./public')) fs.mkdirSync('./public');
