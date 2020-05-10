@@ -38,6 +38,7 @@ jobs:
           COLLECTION_NAME: ${{ secrets.COLLECTIONS }}
       - run: npm run build --if-present
         env:
+          TZ: Asia/Kolkata
           CI: true
       - name: Release Github Pages
         uses: igolopolosov/github-action-release-github-pages@master
