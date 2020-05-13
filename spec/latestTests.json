@@ -12,7 +12,7 @@
   },
   "mark": "circle",
   "width": 1000,
-  "height": 600,
+  "height": 800,
   "encoding": {
     "y": {
       "field": "testName",
