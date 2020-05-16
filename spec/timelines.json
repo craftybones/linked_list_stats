@@ -31,7 +31,7 @@
     "color": {
       "field": "stats['percent']",
       "type": "quantitative",
-      "scale": { "scheme": "redyellowgreen" },
+      "scale": { "scheme": "redyellowgreen", "domain": [0, 100] },
       "legend": { "title": "Pass %", "padding": 30 }
     },
     "size": {

@@ -25,7 +25,8 @@
       "type": "quantitative",
       "scale": {
         "scheme": "lightmulti",
-        "reverse": true
+        "reverse": true,
+        "domain": [0, 100]
       }
     }
   }
