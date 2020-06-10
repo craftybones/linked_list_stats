@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = process.env.MONGO_URL;
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
-client.connect(err => {
+client.connect((err) => {
   if (err) throw err;
 
   const configCollection = client
@@ -16,6 +16,8 @@ client.connect(err => {
       throw err;
     }
     const { collection } = result[0];
+
+    // const collection = process.env.COLLECTION_NAME;
     client
       .db(process.env.DB_NAME)
       .collection(collection)

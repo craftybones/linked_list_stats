@@ -5,7 +5,7 @@
     "name": "foo",
     "url": "/final_data.json"
   },
-  "title": "Map Filter Reduce Test Timelines",
+  "title": "Graphs Test Timelines",
   "config": {
     "axis": {
       "grid": true,

@@ -5,7 +5,7 @@
     "name": "foo",
     "url": "/final_data.json"
   },
-  "title": "Map Filter Reduce Latest Test Results",
+  "title": "Graphs Latest Test Results",
   "config": {
     "axis": { "grid": true, "labelFontSize": 12, "titleFontSize": 14 },
     "title": { "offset": 30 }
